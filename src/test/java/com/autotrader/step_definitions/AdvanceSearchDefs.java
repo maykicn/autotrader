@@ -23,7 +23,7 @@ public class AdvanceSearchDefs {
     @Then("User enter {string} in the zip code text box")
     public void user_enter_in_the_zip_code_text_box(String zipCode) throws InterruptedException {
         Thread.sleep(2);
-        advanceSearchPage.advanceSearchPageTextBox.sendKeys("30004");
+        advanceSearchPage.advanceSearchPageTextBox.sendKeys("30104");
 
     }
 
@@ -48,8 +48,10 @@ public class AdvanceSearchDefs {
 
         Driver.get().manage().deleteCookieNamed("ak_bmsc");
         Thread.sleep(2);
+        System.out.println("Driver.get().getTitle() clickten önce= " + Driver.get().getTitle());
         advanceSearchPage.buttonClick(button);
-        Thread.sleep(2);
+        Thread.sleep(20);
+
 
         /*Set<Cookie> cookies=Driver.get().manage().getCookies();
         System.out.println("cookies.size() = " + cookies.size());
@@ -103,9 +105,12 @@ public class AdvanceSearchDefs {
 
     @Then("Verify that listing on the next page")
     public void verify_that_listing_on_the_next_page() throws InterruptedException {
-        Thread.sleep(2);
-        String expectedTitle="Certified Convertibles for Sale in Alpharetta, GA";
-        String actualTitle=advanceSearchPage.header.getText();
+        Thread.sleep(20);
+        System.out.println("20 sn bekledim");
+        //String expectedTitle="Certified Convertibles for Sale in Alpharetta, GA";
+        String expectedTitle="Cars for Sale Right Now in Alpharetta, GA - Autotrader";
+
+        String actualTitle=Driver.get().getTitle();
         //System.out.println("Driver.get().getTitle() = " + Driver.get().getTitle());
         Assert.assertEquals(expectedTitle,actualTitle);
 
