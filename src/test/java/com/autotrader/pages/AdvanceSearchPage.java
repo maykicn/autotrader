@@ -13,10 +13,10 @@ public class AdvanceSearchPage extends HomePage {
     @FindBy(xpath = "//input[@id='zip']")
     public WebElement advanceSearchPageTextBox;
 
-    @FindBy(xpath = "//div[contains(text(),'Manufacturer Certified')]")
+    @FindBy(xpath = "//input[@value='CERTIFIED']")// --   //div[contains(text(),'Manufacturer Certified')]
     public WebElement manufacturerCertifiedChBox;
 
-    @FindBy(xpath = "//div[contains(text(),'Convertible')]")
+    @FindBy(xpath = "//input[@value='CONVERT']")// --   //div[contains(text(),'Convertible')]
     public WebElement convertibleChBox;
 
     @FindBy(xpath = "//select[@id='4101482096']")
@@ -28,7 +28,7 @@ public class AdvanceSearchPage extends HomePage {
     @FindBy(xpath = "//select[@id='1970425032']")
     public WebElement anyMake;
 
-    @FindBy(xpath = "//button[contains(text(),'Search')]")
+    @FindBy(xpath = "//button[@type='submit']")// --   //button[contains(text(),'Search')]
     public WebElement advanceSearchButton;
 
     @FindBy(xpath = "//span[starts-with(@id,'aegenerated_')]")

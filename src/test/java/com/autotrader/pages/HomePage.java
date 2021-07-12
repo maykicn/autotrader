@@ -13,10 +13,10 @@ public class HomePage {
         PageFactory.initElements(Driver.get(), this);
     }
 
-    @FindBy(xpath = "//button[contains(.,'Search by Budget')]")
+    @FindBy(xpath = "//div[@class='display-inline-block']//button[@data-qaid='lnk-browseByBudget']") //--   //button[contains(.,'Search by Budget')]
     public WebElement searchByBudget;
 
-    @FindBy(xpath = "//button[contains(.,'Browse by Style')]")
+    @FindBy(xpath = "//div[@class='display-inline-block']//button[@data-qaid='lnk-browseByStyle']")// -- //button[contains(.,'Browse by Style')]
     public WebElement browseByStyle;
 
     @FindBy(xpath = "//div[@class='display-inline-block']//a")
